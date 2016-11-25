@@ -10,6 +10,7 @@ module.exports = function(func, callback) {
       var args = JSON.parse(buf);
       func(args, function(resp) {
         c.end(JSON.stringify(resp));
+        server.close();
       });
     });
   });
