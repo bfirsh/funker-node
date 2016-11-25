@@ -1,0 +1,14 @@
+{
+  "name": "funker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "author": "",
+  "license": "Apache 2",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
