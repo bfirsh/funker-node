@@ -12,7 +12,7 @@ module.exports = function(name, args, callback) {
     buf += data;
   });
   client.on('end', function() {
-    var returnValue = JSON.parse(buf)
+    var returnValue = JSON.parse(buf);
     callback(null, returnValue);
   });
 };
