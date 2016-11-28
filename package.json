@@ -1,6 +1,6 @@
 {
   "name": "funker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functions as Docker containers",
     "repository": {
     "type": "git",
