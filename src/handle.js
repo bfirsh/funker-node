@@ -17,7 +17,5 @@ module.exports = function(func, callback) {
   server.on('error', function(err) {
     callback(err);
   });
-  server.listen(9999, '0.0.0.0', 1, function() {
-    callback();
-  });
+  server.listen(9999, '0.0.0.0', 1, callback);
 };
