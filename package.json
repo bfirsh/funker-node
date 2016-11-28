@@ -1,7 +1,11 @@
 {
   "name": "funker",
   "version": "0.0.1",
-  "description": "",
+  "description": "Functions as Docker containers",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/bfirsh/funker-node"
+  },
   "main": "src/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha"
