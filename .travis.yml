@@ -1,5 +1,12 @@
 language: node_js
 node_js:
-  - "6"
-  - "5"
-  - "iojs"
+- '6'
+- '5'
+- iojs
+deploy:
+  provider: npm
+  email: "ben+funker-travis@firshman.co.uk"
+  on:
+    tags: true
+  api_key:
+    secure: Y4ZcthA49dZg1rx1DVhUuKinNc6X+sE7zt5wcvTvRE8P7N1zXZdm43yO/f3wnBPE7L/WZ6UNEZwmbU7aKeP9fl1XfFhOgAE3xSHOmL/sYCtJp05mUczy2o67MUy4hgh6TUitalxwYW8wfiizAD1mw0VZ/0Ks0r8s/lIX/x5zkQz7M/XnSRx3k+UPXmNWEcYMzEmJjxy2gJ8KSxao43nBK/tuPb1j+z7fO8lX4HpiRtJLUvvLt8qYO2r2UPmuZfbhDyEuUNZ6Sm7ZpMmU1rWiIcjnoaoZjYUmocG3tfpYgFNBoX2CzCQv/TRMYpBmGp8rzmeren05DfM6OlmQStgiQA+Q2/rrMrZtqvO72LSwKbfuuB/xQBTCyNUMmEAQ80S2Y8x722+DnDKypCyaSKP7OKNuz/6utpZPrM7laPnYe3j1WBjJiU1i6O7auCtFUG3ZG4xhJzFmpElSdTh+lUHgvQ/ruq+zHx9gGrvU1S+IWf8IBUWFMHU3dkogSnrgK379jBlDR/S32w1sD08CVVRkyOj6sjb3eGQsDGmF7qXDhAXIaSQbbGFYfhTM+prmGwIBJxezH5q8Oa/EsF1Y9DNCIpZthLUvnUuCB6q80i9enMBaKrvoFLHcKlb26A6M5xGW8VlYnujO/7f1M89sBeN0MXcZP61jW8i7Lqw6aug2wEw=
