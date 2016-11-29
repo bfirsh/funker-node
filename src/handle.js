@@ -9,6 +9,10 @@ module.exports = function(func, callback) {
     c.on('end', function() {
       var args = JSON.parse(buf);
       func(args, function(resp) {
+        // If there is no return value, set it to something JSON serializable
+        if (resp === undefined) {
+          resp = null;
+        }
         c.end(JSON.stringify(resp));
         server.close();
       });
