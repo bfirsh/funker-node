@@ -15,5 +15,18 @@ describe('funker', function() {
         });
       });
     });
+    it('should work when there is no return value', function(done) {
+      var f = function(args, callback) {
+        callback();
+      };
+
+      funker.handle(f, function() {
+        funker.call("localhost", {x: 1}, function(err, result) {
+          if (err) done(err);
+          assert.equal(result, null);
+          done();
+        });
+      });
+    });
   });
 });
