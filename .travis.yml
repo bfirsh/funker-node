@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '6'
 - '5'
-- iojs
+- '4'
 deploy:
   provider: npm
   email: "ben+funker-travis@firshman.co.uk"
