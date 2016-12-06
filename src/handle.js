@@ -1,25 +1,34 @@
-var net = require('net');
+"use strict"
 
-module.exports = function(func, callback) {
-  var server = net.createServer({allowHalfOpen: true}, function(c) {
-    var buf = '';
-    c.on('data', function(data) {
+const net = require('net');
+
+let handler = (func, callback) => {
+  let server = net.createServer({allowHalfOpen: true}, (connection) => {
+    let buf = '';
+
+    connection.on('data', (data) => {
       buf += data;
     });
-    c.on('end', function() {
-      var args = JSON.parse(buf);
-      func(args, function(resp) {
+
+    connection.on('end', () => {
+      let args = JSON.parse(buf);
+      func(args, (resp) => {
         // If there is no return value, set it to something JSON serializable
         if (resp === undefined) {
           resp = null;
         }
-        c.end(JSON.stringify(resp));
+
+        connection.end(JSON.stringify(resp));
         server.close();
       });
     });
   });
-  server.on('error', function(err) {
+
+  server.on('error', (err) => {
     callback(err);
   });
-  server.listen(9999, '0.0.0.0', 1, callback);
+  
+  server.listen(process.env.funker_port || 9999, '0.0.0.0', 1, callback);
 };
+
+module.exports = handler;

@@ -1,2 +1,6 @@
-exports.call = require('./call');
-exports.handle = require('./handle');
+"use strict"
+
+module.exports = {
+    "call": require('./call'),
+    "handle": require('./handle')
+};
